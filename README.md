@@ -76,11 +76,11 @@ In order to avoid bloating the repository and to test this idea more quickly, th
 
 The extracted data shall be stored in the same git repository as the migrated projects, but in a specific branch named "db".
 
-The files shall be stored using the four parts of objectname as a path (<type>/<name>/<instance>/<version>) toward a file named "content". The history is stored in the same directory in a file named "hist".
+The files shall be stored using the four parts of objectname as a path (`<type>/<name>/<instance>/<version>`) toward a file named "content". The history is stored in the same directory in a file named "hist".
 
 After dumping the objects and tasks, the content of released project baselines is obtained by making copies of project (ccm cp) that are removed afterwards.
 
-When we have a copy of a project, the content of each of its directories (a list of objectnames) can be queried using "ccm ls --f '%objectname'" and stored in a file named "<type>/<name>/<instance>/<version>/<directory_path>/ls". The script takes profit of this recursive walkthrough inside projects to identify symlinks and store them in symlink/<name>/<instance>/<version>/content.
+When we have a copy of a project, the content of each of its directories (a list of objectnames) can be queried using "ccm ls --f '%objectname'" and stored in a file named `"<type>/<name>/<instance>/<version>/<directory_path>/ls"`. The script takes profit of this recursive walkthrough inside projects to identify symlinks and store them in `symlink/<name>/<instance>/<version>/content`.
 
 The first step shall be launched using the following command, then commit the changes:
 
